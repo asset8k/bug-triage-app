@@ -1,0 +1,51 @@
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Local virtual environments
+.venv/
+thesis_images/.venv/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Logs and temp files
+logs/
+*.log
+*.tmp
+*.swp
+
+# Local datasets and generated splits
+dataset/*.csv
+dataset/*.jsonl
+!dataset/DATASET_GUIDE.md
+
+# Local model artifacts
+models/llm/*.gguf
+models/baseline/*.pkl
+models/baseline/tfidf.pkl
+codebert_model/*.bin
+codebert_model/*.safetensors
+codebert_model/*.pt
+!codebert_model/config.json
+!codebert_model/tokenizer.json
+!codebert_model/tokenizer_config.json
+
+# Runtime/generated results
+results/*.csv
+results/*.json
+!results/RESULTS_GUIDE.md
+
+# Thesis-only assets (scripts + generated figures)
+thesis_images/
