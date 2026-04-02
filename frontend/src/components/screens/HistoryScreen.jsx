@@ -8,7 +8,7 @@ import { useHistory } from '../../context/HistoryContext';
 const PAGE_SIZE = 10;
 
 const LLM_MODEL_IDS = new Set(['ollama', 'qwen', 'finetuned', 'qwen_finetuned']);
-const BASELINE_MODEL_IDS = new Set(['lr', 'svm', 'rf', 'nb', 'xgb', 'ensemble']);
+const BASELINE_MODEL_IDS = new Set(['lr', 'svm', 'rf', 'nb', 'xgb', 'ensemble', 'codebert']);
 
 function isLLMEntry(entry) {
   if (LLM_MODEL_IDS.has(entry.modelId)) return true;
