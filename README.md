@@ -1,6 +1,6 @@
 # CyberTriage
 
-CyberTriage is a local-first bug severity classification and triage platform developed for an MSc thesis project.
+**Intelligent Bug Classification** — CyberTriage is a local-first web platform for MSc thesis research on automated bug severity triage. Analysts sign in, paste bug text or upload documents (`TXT`, `LOG`, `JSON`, `PDF`, `DOCX`), and run inference with **classical baselines** (TF-IDF + ML, plus CodeBERT) or **local LLMs** (zero-shot and fine-tuned GGUF via Ollama). The app supports **batch evaluation** to compare models on holdout data, **history** with export to CSV for tools like Jira, and separate flows for **baseline probability views** versus **LLM reasoning** with draft Jira fields.
 
 It combines:
 - **Classical baselines** (TF-IDF + ML),
@@ -10,6 +10,7 @@ in one unified FastAPI + React application.
 
 ## Table of Contents
 
+- [Screenshots](#screenshots)
 - [Overview](#overview)
 - [Architecture](#architecture)
 - [Quick Start](#quick-start)
@@ -20,6 +21,44 @@ in one unified FastAPI + React application.
 - [Data Models Results Guides](#data-models-results-guides)
 - [Reproducibility and GitHub Notes](#reproducibility-and-github-notes)
 - [Troubleshooting](#troubleshooting)
+
+## Screenshots
+
+Below is a quick tour of the CyberTriage UI (all assets live under [`screenshots/`](screenshots/)).
+
+### Welcome
+
+![Welcome — Intelligent Bug Classification login](screenshots/01-welcome-login.png)
+
+### New ingestion
+
+Paste logs or descriptions, pick baseline vs LLM family and model version, upload files, then run **Analyze Bug**.
+
+![New ingestion — model selection and bug input](screenshots/02-new-ingestion.png)
+
+### Batch evaluation
+
+Compare baseline and LLM metrics (accuracy, precision, recall, F1, duration) on your evaluation splits; run evaluations with configurable batch size.
+
+![Batch evaluation — baseline models](screenshots/03-batch-evaluation-baseline.png)
+
+![Batch evaluation — LLM models](screenshots/04-batch-evaluation-llms.png)
+
+### History
+
+Browse past triage results, filter LLM vs baseline runs, search, and export to CSV for Jira import.
+
+![Analysis request history](screenshots/05-history.png)
+
+### Analysis results
+
+**LLM path:** severity, natural-language reasoning, and **Export to Jira** with prepopulated summary, priority, and description.
+
+![LLM analysis — reasoning and Jira export](screenshots/06-llm-analysis-results.png)
+
+**Baseline path:** severity with confidence and a **probability breakdown** across classes.
+
+![Baseline analysis — severity and probability breakdown](screenshots/07-baseline-analysis.png)
 
 ## Overview
 
@@ -156,6 +195,7 @@ thesis-bug-triage/
 ├── dataset/                # Local dataset files and prep scripts
 ├── models/                 # Local model artifacts
 ├── results/                # Generated metrics/predictions/history
+├── screenshots/            # README UI screenshots
 ├── context /               # Project/thesis architecture and methodology docs
 └── colab_scripts/          # Colab notebooks for training experiments
 ```
