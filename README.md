@@ -98,7 +98,7 @@ npm run dev
 |---|---|
 | `ollama` | Llama 3 8B (Zero) |
 | `qwen` | Qwen 2.5 7B (Zero) |
-| `finetuned` | Llama 3 8B (Fine-tuned) |
+| `llama_finetuned` | Llama 3 8B (Fine-tuned) |
 | `qwen_finetuned` | Qwen 2.5 7B (Fine-tuned) |
 
 Model registration source of truth: `src/engines/registry.py`.
@@ -174,6 +174,11 @@ This project treats large runtime artifacts as local-only assets:
 - GGUF model binaries,
 - baseline `.pkl` artifacts,
 - generated results CSV/JSON.
+
+Model artifacts are stored in Google Drive folders:
+- baseline models: https://drive.google.com/drive/folders/1W59o9fKTFAbfb09XlMoq6Xt6AoATqUyg?usp=sharing
+- LLM models: https://drive.google.com/drive/folders/1qpyJjpyisDQzqzYO4OongFN20IugFFhC?usp=sharing
+- CodeBERT models: https://drive.google.com/drive/folders/1WqrYaTk9AW-z8xzVYYRrqauur9EG_V6q?usp=sharing
 
 These are excluded from normal source-control flow (see `.gitignore`) and should be regenerated per environment.
 
